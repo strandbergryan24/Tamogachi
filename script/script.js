@@ -1,5 +1,3 @@
-alert("javascript is linked")
-
 class Tamagotchi {
     constructor (name) {
         this.name = name;
