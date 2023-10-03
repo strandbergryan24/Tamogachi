@@ -1,5 +1,11 @@
 body {
     background-image: url(https://static.vecteezy.com/system/resources/previews/000/273/915/non_2x/ocean-background-vector.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
 }
 h1 {
     text-align: center;
@@ -9,4 +15,9 @@ h1 {
    display: flex;
    justify-content: center;
    align-items: end;
+}
+#little-otter {
+    width: 40vh;
+    height: auto;
+    align-items: center;
 }

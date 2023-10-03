@@ -8,3 +8,10 @@ class Tamagotchi {
         this.alive = true; 
     }
 }
+
+function promptForName() {
+    const petName = prompt("Please give your pet a name")
+    const newPet = new Tamagotchi(petName);
+}
+
+window.onload = promptForName; 
