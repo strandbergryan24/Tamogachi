@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script/script.js"></script>
+    <script src="script/script.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Tamagotchi-mini-project</title>
 </head>
@@ -16,18 +16,11 @@
     </div>
     <img src="https://i.pinimg.com/originals/e1/ca/39/e1ca39a0f97c5266633707c84db298fb.png" id="little-otter">
     <div class="buttonContainer">
-        <button id="feedPet">Feed</button>
-        <button id="playPet">Play</button>
-        <button id="sleepPet">Sleep</button>
+        <button id="feedPet" onclick="feedPet()">Feed</button>
+        <button id="playPet" onclick="playPet()">Play</button>
+        <button id="sleepPet" onclick="sleepPet()">Sleep</button>
     </div>
-    <div class="petMetrics">
-        <ul>
-            <li>Hunger:</li>
-            <li>Sleepiness:</li>
-            <li>Boredom:</li>
-            <li>Age:</li>
-        </ul>
-    </div>
+    <div class="petMetrics"></div>
 </body>
 
 </html>
