@@ -11,8 +11,23 @@ class Tamagotchi {
             this.incrementAge();
             displayMetrics();
         }, 6000);
-    }
 
+        this.hungerIntervalID = setInterval(() => {
+            this.incrementHunger();
+            displayMetrics();
+        }, 6000);
+
+        this.sleepinessIntervalID = setInterval(() => {
+            this.incrementSleepiness();
+            displayMetrics();
+        }, 6000);
+
+        this.boredomIntervalID = setInterval(() => {
+            this.incrementBoredom();
+            displayMetrics();
+        }, 6000);
+    
+    }
 
     incrementAge() {
         this.age++;
@@ -26,6 +41,7 @@ class Tamagotchi {
             this.hunger--;
         }
         displayMetrics();
+        this.checkIfDead();
     }
 
     play() {
@@ -33,6 +49,7 @@ class Tamagotchi {
             this.boredom--;
         }
         displayMetrics();
+        this.checkIfDead();
     }
 
     sleep() {
@@ -40,6 +57,18 @@ class Tamagotchi {
             this.sleepiness--;
         }
         displayMetrics();
+        this.checkIfDead();
+    }
+    incrementHunger() {
+        this.hunger++;
+    }
+    
+    incrementSleepiness() {
+        this.sleepiness++;
+    }
+    
+    incrementBoredom() {
+        this.boredom++;
     }
 }
 
@@ -76,7 +105,7 @@ function displayMetrics() {
 
     if (currentPet) {
         petMetrics.innerHTML =
-            `<ul>
+    `<ul>
         <li>Hunger: ${pet.hunger}</li>
         <li>Boredom: ${pet.boredom}</li>
         <li>Sleepiness: ${pet.sleepiness}</li>
