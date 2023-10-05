@@ -96,7 +96,13 @@ function CreateTamagotchi(name) {
     return new Tamagotchi(name)
 }
 
-
+function changeBackground() {
+    const body = document.body 
+    body.style.backgroundImage = `url("https://static.vecteezy.com/system/resources/previews/015/987/866/non_2x/sea-ocean-scenery-at-night-with-full-moon-and-cloud-background-illustration-vector.jpg")`
+    setTimeout(() => {
+        body.style.backgroundImage = `url("https://static.vecteezy.com/system/resources/previews/000/273/915/non_2x/ocean-background-vector.jpg")`
+    }, 3000);
+}
 
 function promptForName() {
     const petName = prompt("Please give your pet a name");
