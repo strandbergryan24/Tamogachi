@@ -15,18 +15,36 @@ class Tamagotchi {
         this.hungerIntervalID = setInterval(() => {
             this.incrementHunger();
             displayMetrics();
+            this.checkIfDead();
         }, 6000);
 
         this.sleepinessIntervalID = setInterval(() => {
             this.incrementSleepiness();
             displayMetrics();
+            this.checkIfDead();
         }, 6000);
 
         this.boredomIntervalID = setInterval(() => {
             this.incrementBoredom();
             displayMetrics();
+            this.checkIfDead();
         }, 6000);
     
+    }
+
+    checkIfDead() {
+        if (this.hunger >= 10 && this.sleepiness >= 10 && this.boredom >= 10) {
+            alert(`${this.name} has died!`);
+            this.resetMetrics();
+            promptForName();
+        }
+    }
+
+    resetMetrics() {
+        this.hunger = 5;
+        this.sleepiness = 5;
+        this.boredom = 5;
+        this.age = 0;
     }
 
     incrementAge() {
@@ -77,6 +95,8 @@ let pet;
 function CreateTamagotchi(name) {
     return new Tamagotchi(name)
 }
+
+
 
 function promptForName() {
     const petName = prompt("Please give your pet a name");
